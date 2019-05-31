@@ -21,12 +21,21 @@ class Home extends Component {
             this.setState({
                 infor: ""
             });
-            console.log(this.state.data);
+            this.state.data.push({ id: this.state.count++, text: "From chatbot"});
         };
         
         return(
             <div className="room">
                 <h1>Pysch ChatBot</h1>
+                <div className="room__container">
+                    { this.state.data.map(item => (
+                        <p
+                            className={ item.id % 2 === 0 ? "floatRight" : null }
+                            key={ item.id }>
+                                { item.text }
+                        </p>
+                    )) }
+                </div>
                 <input 
                     name="infor"
                     type="text"

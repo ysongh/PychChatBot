@@ -1,0 +1,10 @@
+.room__container{
+  border: 1px solid black;
+  padding: .5rem;
+  min-height: 35rem;
+  margin-bottom: .5rem;
+}
+
+.floatRight{
+  text-align: right;
+}
