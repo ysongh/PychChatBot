@@ -1,0 +1,32 @@
+{
+    "healths": [
+        {
+            "input": "sad",
+            "solutions": [
+                "Go to the moive",
+                "Fly a kite"
+            ]
+        },
+        {
+            "input": "sick",
+            "solutions": [
+                "Go to the docter",
+                "Sleep more",
+                "Stop eating junk food"
+            ]
+        },
+        {
+            "input": "bad",
+            "solutions": [
+                "You not bad",
+                "Try harder"
+            ]
+        },
+        {
+            "input": "ok",
+            "solutions": [
+                "Are you sure?"
+            ]
+        }
+    ]
+}

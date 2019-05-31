@@ -4,7 +4,7 @@ class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data: [{id: 0, text: "Welcome to Pysch ChatBot, How can I Help You?"}],
+            data: [{id: 0, text: "Welcome to Pysch ChatBot, How are you?"}],
             infor: "",
             count: 1
         };
@@ -17,19 +17,19 @@ class Home extends Component {
     
     render(){
         const addTextToList = () => {
-            const flowerData = require('../flower-shop-skill-7.1.json');
+            const healthData = require('../pysho.json');
             let res = 'sorry, i did not get that';
-            console.log(flowerData);
+            console.log(healthData);
             
-            flowerData.intents.map(intent => {
-                if(this.state.infor === intent.intent){
-                    const len = intent.examples.length;
+            healthData.healths.map(health => {
+                if(this.state.infor === health.input){
+                    const len = health.solutions.length;
                     const n = Math.floor(Math.random() * len);
-                    res = intent.examples[n].text;
+                    res = health.solutions[n];
                 }
             });
             
-            this.state.data.push({ id: this.state.count++, text: this.state.infor});
+            this.state.data.push({ id: this.state.count++, text: this.state.infor || "..."});
             this.setState({
                 infor: ""
             });

@@ -1,10 +1,11 @@
 import React from 'react';
-import ChatRoom1 from './components/ChatRoom1';
+//import ChatRoom1 from './components/ChatRoom1';
+import ChatRoom2 from './components/ChatRoom2';
 
 function App() {
   return (
     <div className="App">
-     <ChatRoom1 />
+     <ChatRoom2 />
     </div>
   );
 }
