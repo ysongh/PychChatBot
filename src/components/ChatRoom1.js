@@ -17,11 +17,22 @@ class Home extends Component {
     
     render(){
         const addTextToList = () => {
+            const flowerData = require('../flower-shop-skill-7.1.json');
+            let res = 'sorry, i did not get that';
+            console.log(flowerData.intents);
+            
+            flowerData.intents.map(intent => {
+                if(this.state.infor === intent.intent){
+                    res = intent.examples[1].text;
+                    return;
+                }
+            });
+            
             this.state.data.push({ id: this.state.count++, text: this.state.infor});
             this.setState({
                 infor: ""
             });
-            this.state.data.push({ id: this.state.count++, text: "From chatbot"});
+            this.state.data.push({ id: this.state.count++, text: res});
         };
         
         return(
