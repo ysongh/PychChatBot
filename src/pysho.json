@@ -27,6 +27,12 @@
             "solutions": [
                 "Are you sure?"
             ]
+        },
+        {
+            "input": "good",
+            "solutions": [
+                "That is great"
+            ]
         }
     ]
 }

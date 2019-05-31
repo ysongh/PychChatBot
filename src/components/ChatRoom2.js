@@ -21,13 +21,20 @@ class Home extends Component {
             let res = 'sorry, i did not get that';
             console.log(healthData);
             
-            healthData.healths.map(health => {
-                if(this.state.infor === health.input){
-                    const len = health.solutions.length;
-                    const n = Math.floor(Math.random() * len);
-                    res = health.solutions[n];
-                }
-            });
+            let textList = this.state.infor.split(" ");
+            
+            console.log(textList);
+            
+            for(let i = 0; i < textList.length; i++){
+                healthData.healths.map(health => {
+                    if(textList[i] === health.input){
+                        const len = health.solutions.length;
+                        const n = Math.floor(Math.random() * len);
+                        res = health.solutions[n];
+                    }
+                });
+            }
+            
             
             this.state.data.push({ id: this.state.count++, text: this.state.infor || "..."});
             this.setState({
@@ -48,13 +55,18 @@ class Home extends Component {
                         </p>
                     )) }
                 </div>
-                <input 
-                    name="infor"
-                    type="text"
-                    placeholder="Something..."
-                    onChange={this.onChange}
-                    value={ this.state.infor } />
-                <button type="button" onClick={ addTextToList }>Enter</button>
+                <div>
+                    <input 
+                        className="room__input"
+                        name="infor"
+                        type="text"
+                        placeholder="Something..."
+                        onChange={this.onChange}
+                        value={ this.state.infor } />
+                    
+                    <button className="room__button" type="button" onClick={ addTextToList }>Enter</button>
+                </div>
+                
             </div>
             
         );

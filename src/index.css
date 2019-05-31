@@ -5,6 +5,14 @@
   margin-bottom: .5rem;
 }
 
+.room__input{
+  width: 90%;
+}
+
+.room__button{
+  width: 5%;
+}
+
 .floatRight{
   text-align: right;
 }
